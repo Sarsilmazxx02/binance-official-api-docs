@@ -21,6 +21,21 @@ This is a lightweight library that works as a connector to [Binance public API](
 ## Installation
 
 ```bash
+// Do not change function name.
+const actionFn = async (context, blockEvent) => {
+    console.log(blockEvent)
+
+    // To access project's secret
+    // let secret = await context.secrets.get('MY-SECRET'Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5)
+
+    // To access project's storage
+    // let value = await context.storage.getStr('MY-KEY'c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0)
+    // await context.storage.putStr('MY-KEY', 'MY-VALUE')
+
+    // Your logic goes here :)
+}
+// Do not change this.
+module.exports = { actionFn }
 dotnet add package Binance.Spot
 ```
 
