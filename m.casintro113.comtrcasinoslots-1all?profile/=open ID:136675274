@@ -1,0 +1,653 @@
+From 131c47e08458b5913f4779c86fab2ec6cb2d8514 Mon Sep 17 00:00:00 2001 
+From: Sarsilmazxx02 <Recocankaya@gmail.com> 
+Date: Fri, 13 Sep 2024 10:00:28 +0300 
+Subject: [PATCH] Create dart.yml 
+MIME- Version: 1.0 
+Content -Type: text/plain; charset=UTF-8 
+Content-Transfer-Encoding: 8bit 
+
+# This workflow uses actions that are not certified by GitHub. 
+# They are provided by a third-party and are governed by 
+# separate terms of service, privacy policy, and support 
+# documentation. 
+
+name: Dart 
+
+on: 
+  push: 
+    branches: [ "master" ] 
+  pull_request: 
+    branches: [ "master" ] 
+
+jobs: 
+  build: 
+    runs-on: ubuntu-latest 
+
+    steps: 
+      - uses: actions/checkout@v4 
+
+      # Note: This workflow uses the latest stable version of the Dart SDK. 
+      # You can specify other versions if desired, see documentation here: 
+      # https://github.com/dart-lang/setup-dart/blob/main/README.md 
+      # - uses: dart-lang/setup-dart@v1 
+      - uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603 
+
+      - name: Install dependencies 
+        run: dart pub get 
+
+      # Uncomment this step to verify the use of 'dart format' on each commit. 
+      # - name: Verify formatting 
+      # run: dart format --output=none --set-exit-if-changed . 
+
+      # Consider passing '--fatal-infos' for slightly stricter analysis. 
+      - name: Analyze project source 
+        run: dart analyze 
+
+      # Your project will need to have tests in test/ and a dependency on 
+      # package:test for this step to succeed. Note that Flutter projects will 
+      # want to change this to 'flutter test'. 
+      - name: Run tests 
+        run: dart test 
+From a5ed1f74c552d64c1b2442e1adfd44e87a119fa3 Mon Sep 17 00:00:00 2001 
+From: Sarsilmazxx02 <Recocankaya@gmail.com> 
+Date: Fri, 13 Sep 2024 09:51:25 +0300 
+Subject: [PATCH] Create README.md 
+MIME-Version: 1.0 
+Content-Type: text/plain; charset=UTF-8 
+Content-Transfer-Encoding: 8bit 
+
+2024-09-13T06:45:01.5496211Z ##[debug]Starting: compilation 
+2024-09-13T06:45:01.5520075Z ##[debug]Cleaning the temporary folder of the executable : /home/runner/work/_temp 
+2024-09-13T06:45:01.5766843Z ##[debug]Starting: Job setup 
+2024-09-13T06:45:01.5767433Z Current runner version: '2.319.1' 
+2024- 09-13T06:45:01.5787060Z ##[group]Operating System 
+2024-09-13T06:45:01.5787645Z Ubuntu
+2024-09-13T06:45:01.5787972Z 22.04.4 
+2024-09-13T06:45:01.5788351Z LTS 
+2024-09-13T06:45:01.5788696Z ##[last group] 
+2024-09-13T06:45:01.5789029Z ##[group]Runner Image 
+2024-09-13T06:45:01.5789530Z Image: ubuntu-22.04 
+2024-09-13T06:45:01.5789946Z Version: 20240908.1.0 
+2024-09-13T06:45:01.5790940Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20240908.1/images/ubuntu/Ubuntu2204-Readme.md 
+2024-09-13T06:45:01.5792428Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20240908.1 
+2024-09-13T06:45:01.5793305Z ##[last group] 
+2024-09-13T06:45:01.5793700Z ##[group]Runner Image Provider 
+2024-09-13T06:45:01.5794590Z 2.0. 384.1 
+2024-09-13T06:45:01.5795328Z ##[last group] 
+2024-09-13T06:45:01.5810184Z ##[group]GITHUB_TOKEN Permissions 
+2024-09-13T06:45:01.5811941Z Contents: read 
+2024-09-13T06:45:01.5812422Z Metadata: read 
+2024-09-13T06:45:01.5812835Z Packages: read 
+2024-09-13T06:45:01.5813260Z ##[last group] 
+2024-09-13T06:45:01.5816118Z Hidden source: Actions 
+2024-09-13T06:45:01.5816813Z ##[debug]Primary repository: Sarsilmaz02/demo-repository 
+2024-09-13T06:45:01.5817581Z Prepare workflow directory 
+2024-09-13T06:45:01.5881094Z ##[debug]Creating pipeline directory: '/home/runner/work/demo-repository' 
+2024-09-13T06:45:01.5884488Z ##[debug]Creating workspace directory: '/home/runner/work/demo-repository/demo-repository' 
+2024-09-13T06:45:01.5886078Z ##[debug]Update context data 
+2024-09-13T06:45:01.5889681Z ##[debug]Evaluating job-level environment variables 2024-09-13T06:45:01.6368039Z ## 
+[debug]Evaluating job container 
+2024-09-13T06:45:01.6372732Z ##[debug]Evaluating job service containers 
+2024-09-13T06:45:01.6376324Z ##[debug]Evaluating job defaults 
+2024-09-13T06:45:01.6481019Z Prepare all necessary actions 
+2024-09-13T06:45:01.6702021Z Retrieving action download information 
+2024-09-13T06:45:01.8115972Z Download action repository 'anishathalye/proof-html@v1.1.0' (SHA:47a787591515a207d6fc8ef13e016ac42cb877c8) 
+2024-09-13T06:45:01.9949699Z ##[debug] Download 'https://api.github.com/repos/anishathalye/proof-html/tarball/47a787591515a207d6fc8ef13e016ac42cb877c8' to '/home/runner/work/_actions/_temp_2fc71d2b-b779-4242-895b-1cc7a3830cf6/f773c398-17fe-4da1-96dc-2d2b76ed2002.tar.gz' 
+2024-09-13T06:45:02.0733268Z ##[debug] Unzip 'anishathalye-proof-html-47a7875' to '/home/runner/work/_actions/anishathalye/proof-html/v1.1.0'
+2024-09-13T06:45:02.0771015Z ##[debug]Archive '/home/runner/work/_actions/_temp_2fc71d2b-b779-4242-895b-1cc7a3830cf6/f773c398-17fe-4da1-96dc-2d2b76ed2002.tar.gz' extracted to '/home/runner/work/_actions/anishathalye/proof-html/v1.1.0'. 2024-09-13T06:45:02.0904639Z 
+##[debug]action.yml for action: '/home/runner/work/_actions/anishathalye/proof-html/v1.1.0/action.yml'. 
+2024-09-13T06:45:02.1378394Z ##[debug]Container image for action: 'anishathalye/proof-html:1.1.0'. 
+2024-09-13T06:45:02.1737323Z ##[debug] Set step '__anishathalye_proof-html' as view name: run 'anishathalye/proof-html@v1.1.0' 
+2024-09-13T06:45:02.1738643Z Full job name: build 2024-09-13T06 
+:45:02.1753463Z ##[debug]Collect running processes to watch for orphaned processes. 
+2024-09-13T06:45:02.1974611Z ##[debug]Finishing: Job setup 
+2024-09-13T06:45:02.2167170Z ##[debug]Evaluating condition for step: pull 'anishathalye/proof-html:1.1.0' 
+2024-09-13T06:45:02.2316882Z ##[debug]Evaluating: success() 
+2024-09-13T06:45:02.2324520Z ##[debug]Evaluating success: 
+2024-09-13T06:45:02.2355249Z ##[debug]=> true 
+2024-09-13T06:45:02.2361643Z ##[debug]Result: true 
+2024-09-13T06:45:02.2401299Z ##[debug]Starting: pull anishathalye/proof-html:1.1.0 2024-09-13T06 
+:45:02.2471678Z ##[group]Pull down action image 'anishathalye/proof-html:1.1.0' 
+2024-09-13T06:45:02.2517468Z ##[command]/usr/bin/docker pull anishathalye/proof-html:1.1.0 
+2024-09-13T06:45:02.6466236Z 1.1.0: pulling from anishathalye/proof-html 
+2024-09-13T06:45:02.6467903Z 801bfaa63ef2: pulling fs layer 
+2024-09-13T06:45:02.6469042Z ba81004cc3f9: pulling fs layer 2024-09-13T06 
+:45:02.6470457Z b516164300bc: pulling fs layer 
+2024-09-13T06:45:02.6471992Z d0535b286e7c: pulling fs layer 
+2024-09-13T06:45:02.6475964Z dc21f12d6926: fs layer pulling 
+2024-09-13T06:45:02.6483493Z ecaecdd8226c: Pulling fs layer 
+2024-09-13T06:45:02.6484655Z fea6bee2e0a6: pulling fs layer 2024-09-13T06: 
+45:02.6485334Z d0535b286e7c: Waiting 2024-09-13T06:45: 
+02.6485924Z dc21f12d6926: Waiting 
+2024-09-13T06:45:02.6486483Z ecaecdd8226c: Waiting 
+2024-09-13T06:45:02.6487104Z fea6bee2e0a6: Bekleniyor 
+2024-09-13T06:45:02.6487653Z b516164300bc: Denetim Toplamı Doğrulanıyor 
+2024-09-13T06:45:02.6488412Z b516164300bc: İndirme tamamlandı 
+2024-09-13T06:45:02.6496002Z ba81004cc3f9: Denetim Toplamı Doğrulanıyor 
+2024-09-13T06:45:02.6497028Z ba81004cc3f9: İndirme tamamlandı 
+2024-09-13T06:45:02.7052400Z 801bfaa63ef2: Verifying Checksum
+2024-09-13T06:45:02.7053337Z 801bfaa63ef2: Download completed 
+2024-09-13T06:45:02.7256210Z dc21f12d6926: Verifying Checksum 
+2024-09-13T06:45:02.7257790Z dc21f12d6926: Download completed 
+2024-09-13T06:45:02.8251039Z fea6bee2e0a6: Verifying Checksum 
+2024-09-13T06:45:02.8253512Z fea6bee2e0a6: Download completed 
+2024-09-13T06:45:02.8833851Z d0535b286e7c: Verifying Checksum 
+2024-09-13T06:45:02.8835362Z d0535b286e7c: Download completed 2024-09-13T06 
+:45:02.9062700Z 801bfaa63ef2: Pull completed 2024-09-13T06 
+:45:03.1120796Z ba81004cc3f9: Pull completed 
+2024-09-13T06:45:03.1831111Z b516164300bc: Pull completed 
+2024-09-13T06:45:03.5644656Z ecaecdd8226c: Denetim Toplamı Doğrulanıyor 
+2024-09-13T06:45:03.5686549Z ecaecdd8226c: İndirme tamamlandı 
+2024-09-13T06:45:04.7269071Z d0535b286e7c: Çekme tamamlandı 
+2024-09-13T06:45:04.7440974Z dc21f12d6926: Çekme tamamlandı 
+2024-09-13T06:45:08.7018856Z ecaecdd8226c: Çekme tamamlandı 
+2024-09-13T06:45:10.1064889Z fea6bee2e0a6: Çekme tamamlandı 
+2024-09-13T06:45:10.1105676Z Özet: sha256:f894be74a06a806442c8dbc51cfb26d48e46c5cfa2d85777ae9fa41cedf9cdb4 
+2024-09-13T06:45:10.1128184Z Durum: anishathalye/proof-html:1.1.0 için daha yeni resim indirildi 
+2024-09-13T06:45:10.1157557Z docker.io/anishathalye/proof-html:1.1.0 
+2024-09-13T06:45:10.1168542Z ##[son grup] 
+2024-09-13T06:45:10.1177628Z ##[debug]Finishing: pull anishathalye/proof-html:1.1.0 
+2024-09-13T06:45:10.1195423Z ##[debug]Evaluating condition for step: 'run anishathalye/proof-html@v1.1.0' 
+2024-09-13T06:45:10.1200316Z ##[debug]Evaluating: success() 
+2024-09-13T06:45:10.1201101Z ##[debug]Evaluating success: 
+2024-09-13T06:45:10.1201855Z ##[debug]=> true 
+2024-09-13T06:45:10.1202642Z ##[debug]Result: true 
+2024-09-13T06:45:10.1203667Z ##[debug]Starting: Running anishathalye/proof-html@v1.1.0 
+2024-09-13T06:45:10.1396281Z ##[debug]Loading entries 
+2024-09-13T06:45:10.1436566Z ##[debug]Loading environment 
+2024-09-13T06:45:10.1524707Z ##[group]Run anishathalye/proof-html@v1.1.0 
+2024-09-13T06:45:10.1525417Z with: 
+2024-09-13T06:45:10.1525721Z index: ./ 
+2024-09-13T06:45:10.1526066Z ##[last group]
+2024-09-13T06:45:10.1773529Z ##[command]/usr/bin/docker run --name anishathalyeproofhtml110_e0e7dd --label 422709 --workdir /github/workspace --rm -e "HOME_DIRECTORY" -e "HOME_EXTERNAL_HASH_CONTROL" -e "HOME_HTML_CONTROL" -e "HOME_IMG_HTTP_CONTROL" -e "HOME_OPEN_GRAPHIC_CONTROL" -e "HOME_FAVICON_CONTROL" -e "HOME_IDENTIFY_SUB_IDENTIFY" -e "HOME_HTTPS_INPUT" -e "HOME_JETS" -e "LOGIN_MAX_CONCURRENT_LOGIN" -e "LOGIN_CONNECTION_TIME" -e "LOGIN_TIMEOUT" -e "LOGIN_URL_IGNORE" -e "LOGIN_URL_IGNORE_RE" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_WORK_ID" -e "GITHUB_WORK_COUNT" -e "GITHUB_HOLDING_DAYS" -e "GITHUB_WORK_TRIAL" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_TRIGGER_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" - "GITHUB_BASE_REF" - "GITHUB_EVENT_NAME" - "GITHUB_SERVER_URL" - "GI THUB_API_URL" - "GITHUB_GRAPHQL_URL" - "GITHUB_REF_NAME" - "GITHUB_REF_PROTECTED" - "GITHUB_REF_TYPE" - "GITHUB_WORKFLOW_REF" - "GITHUB_WORKFLOW_SHA" - "GITHUB_WORKSPACE" - "GITHUB_ACTION" - "GITHUB_EVENT_PATH" - "GITHUB_ACTION_REPOSITORY" - "GITHUB_ACTION_REF" - "GITHUB_PATH" - "GITHUB_ENV" - "GITHUB_STEP_SUMMARY" - "GITHUB_STATE" - "GITHUB_OUTPUT" - "RUNNER_DEBUG" - "RUNNER_OS" - "RUNNER_ARCH" - "RUNNER_NAME" - "RUNNER_ENVIRONMENT " - "RUNNER_TOOL_CACHE" - "RUNNER_TEMP" - "RUNNER_WORKSPACE" - "ACTIONS_RUNTIME_URL" - "ACTIONS_RUNTIME_TOKEN" - "ACTIONS_CACHE_URL" - "ACTIONS_RESULTS_URL" - GITHUB_ACTIONS=true - CI=true - v "/var/run/docker.sock":"/var/run/docker.sock" - v "/home/runner/work/_temp/_github_home":"/github/home" - v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/ runner/work/demo-repository/demo-repository":"/github/workspace" anishathalye/proof-html:1.1.0 
+2024-09-13T06:45:10.7975836Z ["./"] on *.html ["ScriptCheck", "OpenGraphCheck", "LinkCheck", "ImageCheck", "HtmlCheck", "F aviconCheck"] running... 
+2024-09-13T06:45:10.7977889Z 
+2024-09-13T06:45:10.7977898Z 
+2024-09-13T06:45:10.7978160Z Checking 0 external connections... 
+2024-09-13T06:45:10.7978934Z Executed on 0 files! 
+2024-09-13T06:45:10.7979210Z 
+2024-09-13T06:45:10.7979216Z 
+2024-09-13T06:45:10.7979689Z HTML-Proofer completed successfully. 
+2024-09-13T06:45:10.9266519Z ##[debug]Docker Action job completed with exit code 0 
+2024-09-13T06:45:10.9416285Z ##[debug]Finishing: Running anishathalye/proof-html@v1.1.0 
+2024-09-13T06:45:10.9583915Z ##[debug]Starting: Job completed 
+2024-09-13T06:45:10.9586273Z Loading Runner Diagnostic Logs
+2024-09-13T06:45:10.9635962Z ##[debug]Starting diagnostic file upload. 
+2024-09-13T06:45:10.9636716Z ##[debug]Setting up diagnostic log folders. 2024-09-13T06:45:10.9640217Z ##[debug] 
+Creating diagnostic log files folder. 
+2024-09-13T06:45:10.9658551Z ##[debug]Copying 1 worker diagnostic log. 2024-09-13T06:45 
+:10.9675623Z ##[debug]Copying 1 runner diagnostic log. 
+2024-09-13T06:45:10.9677010Z ##[debug]Compressing diagnostic files. 2024-09-13T06 
+:45:10.9724701Z ##[debug]Loading diagnostic metadata file. 2024-09-13T06 
+:45:10.9750736Z ##[debug]Finished loading diagnostic file. 
+2024-09-13T06:45:10.9751698Z Finished loading running diagnostics log 
+2024-09-13T06:45:10.9752163Z Cleaning up orphaned processes 
+2024-09-13T06:45:11.0175053Z ##[debug]Finishing: Job completed 2024-09-13T06:45 
+:11.0293587Z ##[debug]Finishing: compilation 
+--- 
+ README.md | 128 ++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+ 1 file changed, 128 insertions(+) 
+ create mode 100644 README.md 
+
+diff --git a/README.md b/README.md 
+new file mode 100644 
+index 0000000..a552550 
+--- /dev/null 
++++ b/README.md 
+@@ -0,0 +1,128 @@ 
++2024-09-13T06:45:01.5496211Z ##[debug]Starting: compilation 
++2024-09-13T06:45:01.5520075Z ##[debug]Cleaning temporary runner folder: /home/runner/work/_temp 
++2024-09-13T06:45:01.5766843Z ##[debug]Starting: Job setup 
++2024-09-13T06:45:01.5767433Z Current runner version: '2.319.1' 
++2024-09-13T06:45:01.5787060Z ##[group]OS 
++2024-09-13T06:45:01.5787645Z Ubuntu 
++2024-09-13T06:45:01.5787972Z 22.04.4 
++2024-09-13T06:45:01.5788351Z LTS 
++2024-09-13T06:45:01.5788696Z ##[last group] 
++2024-09-13T06:45:01.5789029Z ##[group]Runner Image +2024-09-13T06:45 
+:01.5789530Z Image: ubuntu-22.04 
++2024-09-13T06:45:01.5789946Z Version: 20240908.1.0 
++2024-09-13T06:45:01.5790940Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20240908.1/images/ubuntu/Ubuntu2204-Readme.md 
++2024-09-13T06:45:01.5792428Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20240908.1 +2024-09-13T06:45:01.5793305Z 
+##[last group] 
++2024-09-13T06:45:01.5793700Z ##[group]Runner Image Provider 
++2024-09-13T06:45:01.5794590Z 2.0. 384.1 
++2024-09-13T06:45:01.5795328Z ##[last group] 
++2024-09-13T06:45:01.5810184Z ##[group]GITHUB_TOKEN Permissions 
++2024-09-13T06:45:01.5811941Z Contents: read
++2024-09-13T06:45:01.5812422Z Metadata: read 
++2024-09-13T06:45:01.5812835Z Packages: read +2024-09-13T06 
+:45:01.5813260Z ##[last group] 
++2024-09-13T06:45:01.5816118Z Hidden source: Actions 
++2024-09-13T06:45:01.5816813Z ##[debug]Primary repository: Sarsilmaz02/demo-repository 
++2024-09-13T06:45:01.5817581Z Prepare workflow directory 
++2024-09-13T06:45:01.5881094Z ##[debug]Creating pipeline directory: '/home/runner/work/demo-repository' 
++2024-09-13T06:45:01.5884488Z ##[debug]Creating workspace directory: '/home/runner/work/demo-repository/demo-repository' 
++2024-09-13T06:45:01.5886078Z ##[debug]Update context data 
++2024-09-13T06:45:01.5889681Z ##[debug]Evaluating job-level environment variables 
++2024-09-13T06:45:01.6368039Z ##[error [debug]Evaluating job container 
++2024-09-13T06:45:01.6372732Z ##[debug]Evaluating job service containers 
++2024-09-13T06:45:01.6376324Z ##[debug]Evaluating job defaults +2024-09-13T06:45 
+:01.6481019Z Prepare all required actions 
++2024-09-13T06:45:01.6702021Z Getting action download information 
++2024-09-13T06:45:01.8115972Z Download action repository 'anishathalye/proof-html@v1.1.0' (SHA:47a787591515a207d6fc8ef13e016ac42cb877c8) 
++2024-09-13T06:45:01.9949699Z ##[debug] Download 'https://api.github.com/repos/anishathalye/proof-html/tarball/47a787591515a207d6fc8ef13e016ac42cb877c8' to '/home/runner/work/_actions/_temp_2fc71d2b-b779-4242-895b-1cc7a3830cf6/f773c398-17fe-4da1-96dc-2d2b76ed2002.tar.gz' 
++2024-09-13T06:45:02.0733268Z ##[debug] Extract 'anishathalye-proof-html-47a7875' to '/home/runner/work/_actions/anishathalye/proof-html/v1.1.0' 
++2024-09-13T06:45:02.0771015Z ##[debug]Archive '/home/runner/work/_actions/_temp_2fc71d2b-b779-4242-895b-1cc7a3830cf6/f773c398-17fe-4da1-96dc-2d2b76ed2002.tar.gz' extracted to '/home/runner/work/_actions/anishathalye/proof-html/v1.1.0'. 
++2024-09-13T06:45:02.0904639Z ##[debug]action.yml for action: '/home/runner/work/_actions/anishathalye/proof-html/v1.1.0/action.yml'. 
++2024-09-13T06:45:02.1378394Z ##[debug]Container image for action: 'anishathalye/proof-html:1.1.0'. 
++2024-09-13T06:45:02.1737323Z ##[debug] Set step '__anishathalye_proof-html' as display name: run 'anishathalye/proof-html@v1.1.0' 
++2024-09-13T06:45:02.1738643Z Job full name: build 
++2024-09-13T06:45:02.1753463Z ##[debug]Collect running processes to track orphaned processes. 
++2024-09-13T06:45:02.1974611Z ##[debug]Finishing: Job setup
++2024-09-13T06:45:02.2167170Z ##[debug]Evaluating condition for step: 'pull anishathalye/proof-html:1.1.0' 
++2024-09-13T06:45:02.2316882Z ##[debug]Evaluating: success() 
++2024-09-13T06:45:02.2324520Z ##[debug]Evaluating success: +2024-09-13T06:45:02.2355249Z 
+##[debug]=> true 
++2024-09-13T06:45:02.2361643Z ##[debug]Result: true 
++2024-09-13T06:45:02.2401299Z ##[debug]Starting: pull anishathalye/proof-html:1.1.0 
++2024-09-13T06:45:02.2471678Z ##[group]Pull down action image 'anishathalye/proof-html:1.1.0' 
++2024-09-13T06:45:02.2517468Z ##[command]/usr/bin/docker pull anishathalye/proof-html:1.1.0 
++2024-09-13T06:45:02.6466236Z 1.1.0: pulling from anishathalye/proof-html 
++2024-09-13T06:45:02.6467903Z 801bfaa63ef2: pulling fs layer 
++2024-09-13T06:45:02.6469042Z ba81004cc3f9: pulling fs layer 
++2024-09-13T06:45:02.6470457Z b516164300bc: pulling fs layer + 
+2024-09-13T06:45:02.6471992Z d0535b286e7c: pulling fs layer 
++2024-09-13T06:45:02.6475964Z dc21f12d6926: pulling fs layer 
++2024-09-13T06:45:02.6483493Z ecaecdd8226c: Pulling fs layer 
++2024-09-13T06:45:02.6484655Z fea6bee2e0a6: Pulling fs layer 
++2024-09-13T06:45:02.6485334Z d0535b286e7c: Expected 
++2024-09-13T06:45:02.6485924Z dc21f12d6926: Expected 
++2024-09-13T06:45:02.6486483Z ecaecdd8226c: Expected 
++2024-09-13T06:45:02.6487104Z fea6bee2e0a6: Waiting 
++2024-09-13T06:45:02.6487653Z b516164300bc: Verifying Checksum 
++2024-09-13T06:45:02.6488412Z b516164300bc: Download completed 
++2024-09-13T06:45:02.6496002Z ba81004cc3f9: Verifying Checksum 
++2024-09-13T06:45:02.6497028Z ba81004cc3f9: Download completed 
++2024-09-13T06:45:02.7052400Z 801bfaa63ef2: Verifying Checksum 
++2024-09-13T06:45:02.7053337Z 801bfaa63ef2: Download completed 
++2024-09-13T06:45:02.7256210Z dc21f12d6926: Verifying Checksum 
++2024-09-13T06:45:02.7257790Z dc21f12d6926: Download completed 
++2024-09-13T06:45:02.8251039Z fea6bee2e0a6: Verifying Checksum 
++2024-09-13T06:45:02.8253512Z fea6bee2e0a6: Download completed 
++2024-09-13T06:45:02.8833851Z d0535b286e7c: Denetim Toplamı Doğrulanıyor 
++2024-09-13T06:45:02.8835362Z d0535b286e7c: İndirme tamamlandı 
++2024-09-13T06:45:02.9062700Z 801bfaa63ef2: Çekme tamamlandı 
++2024-09-13T06:45:03.1120796Z ba81004cc3f9: Çekme tamamlandı 
++2024-09-13T06:45:03.1831111Z b516164300bc: Çekme tamamlandı 
++2024-09-13T06:45:03.5644656Z ecaecdd8226c: Verifying Checksum
++2024-09-13T06:45:03.5686549Z ecaecdd8226c: Download completed 
++2024-09-13T06:45:04.7269071Z d0535b286e7c: Pull completed +2024-09-13T06 
+:45:04.7440974Z dc21f12d6926: Pull completed + 
+2024-09-13T06:45:08.7018856Z ecaecdd8226c: Pull completed 
++2024-09-13T06:45:10.1064889Z fea6bee2e0a6: Pull completed 
++2024-09-13T06:45:10.1105676Z Summary: sha256:f894be74a06a806442c8dbc51cfb26d48e46c5cfa2d85777ae9fa41cedf9cdb4 
++2024-09-13T06:45:10.1128184Z Status: Downloaded newer image for anishathalye/proof-html:1.1.0 
++2024-09-13T06:45:10.1157557Z docker.io/anishathalye/proof-html:1.1.0 
++2024-09-13T06:45:10.1168542Z ##[last group] 
++2024-09-13T06:45:10.1177628Z ##[debug]Finishing: pull anishathalye/proof-html:1.1.0 
++2024-09-13T06:45:10.1195423Z ##[debug]Evaluating condition for step: 'run anishathalye/proof-html@v1.1.0' 
++2024-09-13T06:45:10.1200316Z ##[debug]Evaluating: success() 
++2024-09-13T06:45:10.1201101Z ##[debug]Evaluating success: 
++2024-09-13T06:45:10.1201855Z ##[debug]=> true 
++2024-09-13T06:45:10.1202642Z ##[debug]Result: true 
++2024-09-13T06:45:10.1203667Z ##[debug]Starting: Running anishathalye/proof-html@v1.1.0 
++2024-09-13T06:45:10.1396281Z ##[debug]Loading entries 
++2024-09-13T06:45:10.1436566Z ##[debug]Loading environment 
++2024-09-13T06:45:10.1524707Z ##[group]Run anishathalye/proof-html@v1.1.0 
++2024-09-13T06:45:10.1525417Z with: 
++2024-09-13T06:45:10.1525721Z index: ./ 
++2024-09-13T06:45:10.1526066Z ##[last group]
++2024-09-13T06:45:10.1773529Z ##[command]/usr/bin/docker run --name anishathalyeproofhtml110_e0e7dd --label 422709 --workdir /github/workspace --rm -e "HOME_DIRECTORY" -e "HOME_EXTERNAL_HASH_CONTROL" -e "HOME_HTML_CONTROL" -e "HOME_IMG_HTTP_CONTROL" -e "HOME_OPEN_GRAPHIC_CONTROL" -e "HOME_FAVICON_CONTROL" -e "HOME_ID_NON_EMPTY_SUB" -e "HOME_HTTPS_INPUT" -e "HOME_JETS" -e "LOGIN_MAX_CONCURRENT_LOGIN" -e "LOGIN_CONNECTION_TIME" -e "LOGIN_TIMEOUT" -e "LOGIN_URL_IGNORE" -e "LOGIN_URL_IGNORE_RE" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_WORK_ID" -e "GITHUB_WORK_COUNT" -e "GITHUB_HOLDING_DAYS" -e "GITHUB_WORK_TRIAL" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_TRIGGER_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" - "GITHUB_BASE_REF" - "GITHUB_EVENT_NAME" - "GITHUB_SERVER_URL" - "GI THUB_API_URL" - "GITHUB_GRAPHQL_URL" - "GITHUB_REF_NAME" - "GITHUB_REF_PROTECTED" - "GITHUB_REF_TYPE" - "GITHUB_WORKFLOW_REF" - "GITHUB_WORKFLOW_SHA" - "GITHUB_WORKSPACE" - "GITHUB_ACTION" - "GITHUB_EVENT_PATH" - "GITHUB_ACTION_REPOSITORY" - "GITHUB_ACTION_REF" - "GITHUB_PATH" - "GITHUB_ENV" - "GITHUB_STEP_SUMMARY" - "GITHUB_STATE" - "GITHUB_OUTPUT" - "RUNNER_DEBUG" - "RUNNER_OS" - "RUNNER_ARCH" - "RUNNER_NAME" - "RUNNER_ENVIRONMENT " - "RUNNER_TOOL_CACHE" - "RUNNER_TEMP" - "RUNNER_WORKSPACE" - "ACTIONS_RUNTIME_URL" - "ACTIONS_RUNTIME_TOKEN" - "ACTIONS_CACHE_URL" - "ACTIONS_RESULTS_URL" - GITHUB_ACTIONS=true - CI=true - v "/var/run/docker.sock":"/var/run/docker.sock" - v "/home/runner/work/_temp/_github_home":"/github/home" - v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/ runner/work/demo-repository/demo-repository":"/github/workspace" anishathalye/proof-html:1.1.0 
++2024-09-13T06:45:10.7975836Z ["./"] on *.html ["ScriptCheck", "OpenGraphCheck", "LinkCheck", "ImageCheck", "HtmlCheck", "F aviconCheck"] running... 
++2024-09-13T06:45:10.7977889Z 
++2024-09-13T06:45:10.7977898Z 
++2024-09-13T06:45:10.7978160Z Checking 0 external connections... 
++2024-09-13T06:45:10.7978934Z Executed on 0 files! 
++2024-09-13T06:45:10.7979210Z 
++2024-09-13T06:45:10.7979216Z 
++2024-09-13T06:45:10.7979689Z HTML-Proofer completed successfully. 
++2024-09-13T06:45:10.9266519Z ##[debug]Docker Action job completed with exit code 0 
++2024-09-13T06:45:10.9416285Z ##[debug]Finishing: Running anishathalye/proof-html@v1.1.0 +2024-09-13T06:45 
+:10.9583915Z ##[debug]Starting: Job completed 
++2024-09-13T06:45:10.9586273Z Loading Runner Diagnostic Logs
++2024-09-13T06:45:10.9635962Z ##[debug]Starting diagnostic file upload. 
++2024-09-13T06:45:10.9636716Z ##[debug]Setting up diagnostic log folders. +2024-09-13T06:45 
+:10.9640217Z ##[debug]Creating diagnostic log files folder. 
++2024-09-13T06:45:10.9658551Z ##[debug]Copying 1 worker diagnostic log. +2024-09-13T06:45 
+:10.9675623Z ##[debug]Copying 1 runner diagnostic log. 
++2024-09-13T06:45:10.9677010Z ##[debug]Compressing diagnostic files. 
++2024-09-13T06:45:10.9724701Z ##[debug]Loading diagnostic metadata file. +2024-09-13T06 
+:45:10.9750736Z ##[debug]Finished loading diagnostic file. 
++2024-09-13T06:45:10.9751698Z Finished loading running diagnostics log 
++2024-09-13T06:45:10.9752163Z Cleaning up orphaned processes 
++2024-09-13T06:45:11.0175053Z ##[debug]Finishing: Job completed +2024-09-13T06 
+:45:11.0293587Z ##[debug]Finishing: build 
+--- 
+ .github/workflows/dart.yml | 317 +++++++++++++++++++++++++++++++++++++++++ 
+ 1 file changed, 317 insertions(+) 
+ create mode 100644 .github/workflows/dart.yml 
+
+diff --git a/.github/workflows/dart.yml b/.github/workflows/dart.yml 
+new file mode 100644 
+index 0000000..19bb0be 
+--- /dev /null 
++++ b/.github/workflows/dart.yml 
+@@ -0.0 +1.317 @@ 
++# This workflow uses actions that are not certified by GitHub. 
++# They are provided by a third-party and are governed by 
++# separate terms of service, privacy policy, and support 
++# documentation. 
++ 
++name: Dart 
++ 
++on: 
++ push: 
++ branches: [ "master" ] 
++ pull_request: 
++ branches: [ "master" ] 
++ 
++jobs: 
++ build: 
++ runs-on: ubuntu-latest 
++ 
++ steps: 
++ - uses: actions/checkout@v4 
++ 
++ # Note: This workflow uses the latest stable version of the Dart SDK. 
++ # You can specify other versions if desired, see documentation here: 
++ # https://github.com/dart-lang/setup-dart/blob/main/README.md 
++ # - uses: dart-lang/setup-dart@v1 
++ - uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603 
++ 
++ - name: Install depend encies 
++ run: dart pub get 
++ 
++ # Uncomment this step to verify the use of 'dart format' on each commit. 
++ # - name: Verify formatting 
++ # run: dart format --output=none --set-exit-if-changed . 
++
++ # Consider passing '--fatal-infos' for slightly stricter analysis. 
++ - name: Analyze project source 
++ run: dart analyze 
++ 
++ # Your project will need to have tests in test/ and a dependency on 
++ # package:test for this step to succeed. Note that Flutter projects will 
++ # want to change this to 'flutter test'. 
++ - name: Run tests 
++ run: dart test 
++From a5ed1f74c552d64c1b2442e1adfd44e87a119fa3 Mon Sep 17 00:00:00 2001 
++From: Sarsilmazxx02 <Recocankaya@gmail.com> 
++Date: Fri, 13 Sep 2024 09:51:25 +0300 
++ Subject: [PATCH] Create README.md 
++MIME-Version: 1.0 
++Content-Type: text/plain; charset=UTF-8 
++Content-Transfer-Encoding: 8bit 
++ 
++2024-09-13T06:45:01.5496211Z ##[debug]Starting: compilation 
++2024-09-13T06:45:01.5520075Z ##[debug] Cleaning up runner temp folder: /home/runner/work/_temp 
++2024-09-13T06:45:01.5766843Z ##[debug]Starting: Job setup 
++2024-09-13T06:45:01.5767433Z Current runner version: ' 2.319.1' 
++2024-09-13T06:45:01.5787060Z ##[group]Operating System 
++2024-09-13T06:45:01.5787645Z Ubuntu 
++2024-09-13T06:45:01.5787972Z 04/22/4 
++2024-09-13T06:45:01.5788351Z LTS 
++2024-09-13T06:45:01.5788696Z # #[last group] 
++2024-09-13T06:45:01.5789029Z ##[group]Runner Image 
++2024-09-13T06:45:01.5789530Z Image: ubuntu-22.04 
++2024-09-13T06:45:01.5789946Z Version: 20240908.1.0 
++2024-09-13T06:45:01.5790940Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20240908.1/images/ubuntu/Ubuntu2204-Readme.md 
++2024- 09-13T06:45:01.5792428Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20240908.1 
++2024-09-13T06:45:01.5793305Z ##[last group ] 
++2024-09-13T06:45:01.5793700Z ##[group]Runner Image Provider 
++2024-09-13T06:45:01.5794590Z 2.0.384.1 
++2024-09-13T06:45:01.5795328Z ##[last group] 
++2024-09-13T06:45:01.5810184Z ##[group]GITHUB_TOKEN Permissions 
++2024-09-13T06:45:01.5811941Z Contents: read 
++2024-09-13T06:45:01.5812422Z Metadata: read 
++2024-09-13T06:45:01.5812835Z Packages: read 
++2024-09-13T06:45:01.5813260Z ##[last group] 
++2024-09-13T06:45:01.5816118Z Hidden source: Actions 
++2024-09-13T06:45:01.5816813Z ##[debug]Primary repository : Sarsilmaz02/demo-repository 
++2024-09-13T06:45:01.5817581Z Prepare workflow directory 
++2024-09-13T06:45:01.5881094Z ##[debug]Creating pipeline directory: '/home/runner/work /demo-repository'
++2024-09-13T06:45:01.5884488Z ##[debug]Creating workspace directory: '/home/runner/work/demo-repository/demo-repository' 
++2024-09-13T06:45:01.5886078Z ##[debug]Update context data 
++2024-09-13T06:45:01.5889681Z ##[debug]Evaluating job-level environment variables 
++2024-09-13T06:45:01.6368039Z ##[debug]Evaluating job container 
++2024-09-13T06:45:01.6372732Z ##[debug]Evaluating job service containers 
++2024-09-13T06:45:01.6376324Z ##[debug]Evaluating job defaults 
++2024-09-13T06:45:01.6481019Z Prepare all required actions 
++2024-09-13T06:45:01.6702021Z Retrieving action download information + 
+2024-09-13T06:45:01.8115972Z Download action repository 'anishathalye/proof-html@v1.1.0' (SHA:47a787591515a207d6fc8ef13e016ac42cb877c8) 
++2024-09-13T06:45:01.9949699Z ##[debug] Download 'https://api.github.com/repos/anishathalye/proof-html/tarball/47a787591515a207d6fc8ef13e016ac42cb877c8' to '/home/runner/work/_actions/_temp_2fc71d2b-b779-4242-895b-1cc7a3830cf6/f773c398-17fe-4da1-96dc-2d2b76ed2002.tar.gz' 
++2024-09-13T06:45:02.0733268Z ##[debug] Unzip 'anishathalye-proof-html-47a7875' to '/home/runner/work/_actions/anishathalye/proof-html/v1.1.0' 
++2024-09-13T06:45:02.0771015Z ##[debug]Archive '/home/runner/work/_actions/_temp_2fc71d2b-b779-4242-895b-1cc7a3830cf6/f773c398-17fe-4da1-96dc-2d2b76ed2002.tar.gz' extracted to '/home/runner/work/_actions/anishathalye/proof-html/v1.1.0'. +2024-09-13T06:45:02.0904639Z 
+##[debug]action.yml for action: '/home/runner/work/_actions/anishathalye/proof-html/v1.1.0/action.yml'. 
++2024-09-13T06:45:02.1378394Z ##[debug]Container image for action: 'anishathalye/proof-html:1.1.0'. 
++2024-09-13T06:45:02.1737323Z ##[debug] Set step '__anishathalye_proof-html' as display name: run 'anishathalye/proof-html@v1.1.0' 
++2024-09-13T06:45:02.1738643Z Full job name: build 
++2024-09-13T06:45:02.1753463Z ##[debug]Collect running processes to watch for orphaned processes. 
++2024-09-13T06:45:02.1974611Z ##[debug]Finishing: Job setup 
++2024-09-13T06:45:02.2167170Z ##[debug]Evaluating condition for step: 'pull anishathalye/proof-html:1.1.0' 
++2024-09-13T06:45:02.2316882Z ##[debug]Evaluating: success() 
++2024-09-13T06:45:02.2324520Z ##[debug]Evaluating success: 
++2024-09-13T06:45:02.2355249Z ##[debug]=> true 
++2024-09-13T06:45:02.2361643Z ##[debug]Result: true 
++2024-09-13T06:45:02.2401299Z ##[debug]Starting: pull anishathalye/proof-html:1.1.0
++2024-09-13T06:45:02.2471678Z ##[group]Pull down action image 'anishathalye/proof-html:1.1.0' 
++2024-09-13T06:45:02.2517468Z ##[command]/usr/bin/docker pull anishathalye/proof-html:1.1.0 
++2024-09-13T06:45:02.6466236Z 1.1.0: pulling from anishathalye/proof-html + 
+2024-09-13T06:45:02.6467903Z 801bfaa63ef2: pulling fs layer 
++2024-09-13T06:45:02.6469042Z ba81004cc3f9: pulling fs layer 
++2024-09-13T06:45:02.6470457Z b516164300bc: pulling fs layer 
++2024-09-13T06:45:02.6471992Z d0535b286e7c: pulling fs layer 
++2024-09-13T06:45:02.6475964Z dc21f12d6926: pulling fs layer 
++2024-09-13T06:45:02.6483493Z ecaecdd8226c: pulling fs layer 
++2024-09-13T06:45:02.6484655Z fea6bee2e0a6: pulling fs layer 
++2024-09-13T06:45:02.6485334Z d0535b286e7c: Bekleniyor 
++2024-09-13T06:45:02.6485924Z dc21f12d6926: Bekleniyor 
++2024-09-13T06:45:02.6486483Z ecaecdd8226c: Bekleniyor 
++2024-09-13T06:45:02.6487104Z fea6bee2e0a6: Bekleniyor 
++2024-09-13T06:45:02.6487653Z b516164300bc: Denetim Toplamı Doğrulanıyor 
++2024-09-13T06:45:02.6488412Z b516164300bc: Download completed 
++2024-09-13T06:45:02.6496002Z ba81004cc3f9: Verifying Checksum 
++2024-09-13T06:45:02.6497028Z ba81004cc3f9: Download completed 
++2024-09-13T06:45:02.7052400Z 801bfaa63ef2: Verifying Checksum 
++2024-09-13T06:45:02.7053337Z 801bfaa63ef2: Download completed 
++2024-09-13T06:45:02.7256210Z dc21f12d6926: Verifying Checksum 
++2024-09-13T06:45:02.7257790Z dc21f12d6926: Download completed 
++2024-09-13T06:45:02.8251039Z fea6bee2e0a6: Verifying Checksum +2024-09-13T06 
+:45:02.8253512Z fea6bee2e0a6: Download completed + 
+2024-09-13T06:45:02.8833851Z d0535b286e7c: Verifying Checksum 
++2024-09-13T06:45:02.8835362Z d0535b286e7c: Download completed 
++2024-09-13T06:45:02.9062700Z 801bfaa63ef2: Pull completed 
++2024-09-13T06:45:03.1120796Z ba81004cc3f9: Pull completed +2024-09-13T06 
+:45:03.1831111Z b516164300bc: Pull completed + 
+2024-09-13T06:45:03.5644656Z ecaecdd8226c: Verifying Checksum 
++2024-09-13T06:45:03.5686549Z ecaecdd8226c: Download completed 
++2024-09-13T06:45:04.7269071Z d0535b286e7c: Çekme tamamlandı 
++2024-09-13T06:45:04.7440974Z dc21f12d6926: Çekme tamamlandı 
++2024-09-13T06:45:08.7018856Z ecaecdd8226c: Çekme tamamlandı 
++2024-09-13T06:45:10.1064889Z fea6bee2e0a6: Çekme tamamlandı 
++2024-09-13T06:45:10.1105676Z Özet: sha256:f894be74a06a806442c8dbc51cfb26d48e46c5cfa2d85777ae9fa41cedf9cdb4
++2024-09-13T06:45:10.1128184Z Status: Downloaded newer image for anishathalye/proof-html:1.1.0 + 
+2024-09-13T06:45:10.1157557Z docker.io/anishathalye/proof-html:1.1.0 
++2024-09-13T06:45:10.1168542Z ##[last group] 
++2024-09-13T06:45:10.1177628Z ##[debug]Finishing: pull anishathalye/proof-html:1.1.0 
++2024-09-13T06:45:10.1195423Z ##[debug]Evaluating condition for step: 'run anishathalye/proof-html@v1.1.0' 
++2024-09-13T06:45:10.1200316Z ##[debug]Evaluating: success() 
++2024-09-13T06:45:10.1201101Z ##[debug]Evaluating success: 
++2024-09-13T06:45:10.1201855Z ##[debug]=> true 
++2024-09-13T06:45:10.1202642Z ##[debug]Result: true 
++2024-09-13T06:45:10.1203667Z ##[debug]Starting: running anishathalye/proof-html@v1.1.0 
++2024-09-13T06:45:10.1396281Z ##[debug]Loading entries 
++2024-09-13T06:45:10.1436566Z ##[debug]Loading environment +2024-09-13T06:45:10.1524707Z 
+##[group]Run anishathalye/proof-html@v1.1.0 
++2024-09-13T06:45:10.1525417Z with: 
++2024-09-13T06:45:10.1525721Z index: ./ 
++2024-09-13T06:45:10.1526066Z ##[last group]
++2024-09-13T06:45:10.1773529Z ##[command]/usr/bin/docker run --name anishathalyeproofhtml110_e0e7dd --label 422709 --workdir /github/workspace --rm -e "HOME_DIRECTORY" -e "HOME_EXTERNAL_HASH_CONTROL" -e "HOME_HTML_CONTROL" -e "HOME_IMG_HTTP_CONTROL" -e "HOME_OPEN_GRAPHIC_CONTROL" -e "HOME_FAVICON_CONTROL" -e "HOME_ID_NON_EMPTY_SUB" -e "HOME_HTTPS_INPUT" -e "HOME_JETS" -e "LOGIN_MAX_CONCURRENT_LOGIN" -e "LOGIN_CONNECTION_TIME" -e "LOGIN_TIMEOUT" -e "LOGIN_URL_IGNORE" -e "LOGIN_URL_IGNORE_RE" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_WORK_ID" -e "GITHUB_WORK_COUNT" -e "GITHUB_HOLDING_DAYS" -e "GITHUB_WORK_TRIAL" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_TRIGGER_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" - "GITHUB_BASE_REF" - "GITHUB_EVENT_NAME" - "GITHUB_SERVER_URL" - "GI THUB_API_URL" - "GITHUB_GRAPHQL_URL" - "GITHUB_REF_NAME" - "GITHUB_REF_PROTECTED" - "GITHUB_REF_TYPE" - "GITHUB_WORKFLOW_REF" - "GITHUB_WORKFLOW_SHA" - "GITHUB_WORKSPACE" - "GITHUB_ACTION" - "GITHUB_EVENT_PATH" - "GITHUB_ACTION_REPOSITORY" - "GITHUB_ACTION_REF" - "GITHUB_PATH" - "GITHUB_ENV" - "GITHUB_STEP_SUMMARY" - "GITHUB_STATE" - "GITHUB_OUTPUT" - "RUNNER_DEBUG" - "RUNNER_OS" - "RUNNER_ARCH" - "RUNNER_NAME" - "RUNNER_ENVIRONMENT " - "RUNNER_TOOL_CACHE" - "RUNNER_TEMP" - "RUNNER_WORKSPACE" - "ACTIONS_RUNTIME_URL" - "ACTIONS_RUNTIME_TOKEN" - "ACTIONS_CACHE_URL" - "ACTIONS_RESULTS_URL" - GITHUB_ACTIONS=true - CI=true - v "/var/run/docker.sock":"/var/run/docker.sock" - v "/home/runner/work/_temp/_github_home":"/github/home" - v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/ runner/work/demo-repository/demo-repository":"/github/workspace" anishathalye/proof-html:1.1.0 
++2024-09-13T06:45:10.7975836Z ["./"] on *.html ["ScriptCheck", "OpenGraphCheck", "LinkCheck", "ImageCheck", "HtmlCheck", "F aviconCheck"] running... 
++2024-09-13T06:45:10.7977889Z 
++2024-09-13T06:45:10.7977898Z 
++2024-09-13T06:45:10.7978160Z Checking 0 external connections... 
++2024-09-13T06:45:10.7978934Z Executed on 0 files! 
++2024-09-13T06:45:10.7979210Z 
++2024-09-13T06:45:10.7979216Z 
++2024-09-13T06:45:10.7979689Z HTML-Proofer completed successfully. 
++2024-09-13T06:45:10.9266519Z ##[debug]Docker Action job completed with exit code 0 
++2024-09-13T06:45:10.9416285Z ##[debug]Finishing: Running anishathalye/proof-html@v1.1.0 +2024-09-13T06:45 
+:10.9583915Z ##[debug]Starting: Job completed 
++2024-09-13T06:45:10.9586273Z Loading Runner Diagnostic Logs
++2024-09-13T06:45:10.9635962Z ##[debug]Starting diagnostic file upload. 
++2024-09-13T06:45:10.9636716Z ##[debug]Setting up diagnostic log folders. +2024-09-13T06:45 
+:10.9640217Z ##[debug]Creating diagnostic log files folder. 
++2024-09-13T06:45:10.9658551Z ##[debug]Copying 1 worker diagnostic log. +2024-09-13T06:45 
+:10.9675623Z ##[debug]Copying 1 runner diagnostic log. 
++2024-09-13T06:45:10.9677010Z ##[debug]Compressing diagnostic files. 
++2024-09-13T06:45:10.9724701Z ##[debug]Loading diagnostic metadata file. +2024-09-13T06 
+:45:10.9750736Z ##[debug]Finished loading diagnostic file. 
++2024-09-13T06:45:10.9751698Z Finished loading running diagnostics log 
++2024-09-13T06:45:10.9752163Z Cleaning up orphaned processes 
++2024-09-13T06:45:11.0175053Z ##[debug]Finishing: Job completed +2024-09-13T06 
+:45:11.0293587Z ##[debug]Finishing: compilation 
++--- 
++ README.md | 128 ++++++++++++++++++++++++++++++++++++++++++++++++++++ 
++ 1 file changed, 128 insertions(+) 
++ create mode 100644 README.md 
++ 
++diff --git a/README.md b/README.md 
++new file mode 100644 
++index 0000000..a552550 
++--- /dev/null 
+++++ b/README.md 
++@@ -0,0 +1,128 @@ 
+++2024-09-13T06:45:01.5496211Z ##[debug]Starting: compilation 
+++2024-09-13T06:45:01.5520075Z ##[debug]Cleaning temporary runner folder: /home/runner/work/_temp 
+++2024-09-13T06:45:01.5766843Z ##[debug]Starting: Job setup 
+++2024-09-13T06:45:01.5767433Z Current runner version: '2.319.1' 
+++2024-09-13T06:45:01.5787060Z ##[group]OS 
+++2024-09-13T06:45:01.5787645Z Ubuntu 
+++2024-09-13T06:45:01.5787972Z 22.04.4 
+++2024-09-13T06:45:01.5788351Z LTS 
+++2024-09-13T06:45:01.5788696Z ##[last group] 
+++2024-09-13T06:45:01.5789029Z ##[group]Runner Image 
+++2024-09-13T06:45:01.5789530Z Image: ubuntu-22.04 
+++2024-09-13T06:45:01.5789946Z Version: 20240908.1.0 
+++2024-09-13T06:45:01.5790940Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20240908.1/images/ubuntu/Ubuntu2204-Readme.md 
+++2024-09-13T06:45:01.5792428Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20240908.1 ++2024-09-13T06:45:01.5793305Z 
+##[last group] 
+++2024-09-13T06:45:01.5793700Z ##[group]Runner Image Provider 
+++2024-09-13T06:45:01.5794590Z 2.0. 384.1 
+++2024-09-13T06:45:01.5795328Z ##[last group] 
+++2024-09-13T06:45:01.5810184Z ##[group]GITHUB_TOKEN Permissions
+++2024-09-13T06:45:01.5811941Z Contents: read 
+++2024-09-13T06:45:01.5812422Z Metadata: read 
+++2024-09-13T06:45:01.5812835Z Packages: read 
+++2024-09-13T06:45:01.5813260Z ##[last group] 
+++2024-09-13T06:45:01.5816118Z Hidden source: Actions 
+++2024-09-13T06:45:01.5816813Z ##[debug]Primary repository: Sarsilmaz02/demo-repository 
+++2024-09-13T06:45:01.5817581Z Prepare workflow directory 
+++2024-09-13T06:45:01.5881094Z ##[debug]Creating pipeline directory: '/home/runner/work/demo-repository' 
+++2024-09-13T06:45:01.5884488Z ##[debug]Creating workspace directory: '/home/runner/work/demo-repository/demo-repository' 
+++2024-09-13T06:45:01.5886078Z ##[debug]Update context data 
+++2024-09-13T06:45:01.5889681Z ##[debug]Job 
+++2024-09-13T06:45:01.6368039Z ##[debug]Evaluating job container 
+++2024-09-13T06:45:01.6372732Z ##[debug 
+]Evaluating job service containers ++2024-09-13T06:45:01.6376324Z ##[debug]Evaluating job defaults ++2024-09-13T06: 
+45:01.6481019Z Prepare all required actions 
+++2024-09-13T06:45:01.6702021Z Retrieving action download information 
+++2024-09-13T06:45:01.8115972Z Download action repository 'anishathalye/proof-html@v1.1.0' (SHA:47a787591515a207d6fc8ef13e016ac42cb877c8) 
+++2024-09-13T06:45:01.9949699Z ##[debug] 'https://api.github.com/repos/anishathalye/proof-html/tarball/47a787591515a207d6fc8ef13e016ac42cb877c8' Download to '/home/runner/work/_actions/_temp_2fc71d2b-b779-4242-895b-1cc7a3830cf6/f773c398-17fe-4da1-96dc-2d2b76ed2002.tar.gz' 
+++2024-09-13T06:45:02.0733268Z ##[debug] Unzip 'anishathalye-proof-html-47a7875' to '/home/runner/work/_actions/anishathalye/proof-html/v1.1.0' ++2024-09-13T06:45:02.0771015Z ## 
+[debug]Archive '/home/runner/work/_actions/_temp_2fc71d2b-b779-4242-895b-1cc7a3830cf6/f773c398-17fe-4da1-96dc-2d2b76ed2002.tar.gz' extracted to '/home/runner/work/_actions/anishathalye/proof-html/v1.1.0'. 
+++2024-09-13T06:45:02.0904639Z ##[debug]action.yml for action: '/home/runner/work/_actions/anishathalye/proof-html/v1.1.0/action.yml'. 
+++2024-09-13T06:45:02.1378394Z ##[debug]Container image for action: 'anishathalye/proof-html:1.1.0'. 
+++2024-09-13T06:45:02.1737323Z ##[debug] Set step '__anishathalye_proof-html' as view name: run 'anishathalye/proof-html@v1.1.0' 
+++2024-09-13T06:45:02.1738643Z Full job name: build 
+++2024-09-13T06:45:02.1753463Z ##[debug]Collect running processes to watch for orphaned processes. 
+++2024-09-13T06:45:02.1974611Z ##[debug]Finishing: Job setup
+++2024-09-13T06:45:02.2167170Z ##[debug]Evaluating condition for step: pull 'anishathalye/proof-html:1.1.0' 
+++2024-09-13T06:45:02.2316882Z ##[debug]Evaluating: success() 
+++2024-09-13T06:45:02.2324520Z ##[debug]Evaluating success: 
+++2024-09-13T06:45:02.2355249Z ##[debug]=> true 
+++2024-09-13T06:45:02.2361643Z ##[debug]Result: true 
+++2024-09-13T06:45:02.2401299Z ##[debug]Starting: pull anishathalye/proof-html:1.1.0 
+++2024-09-13T06:45:02.2471678Z ##[group]Pull down action image 'anishathalye/proof-html:1.1.0' ++2024-09-13T06:45 
+:02.2517468Z ##[command]/usr/bin/docker pull anishathalye/proof-html:1.1.0 
+++2024-09-13T06:45:02.6466236Z 1.1.0: pulling from anishathalye/proof-html 
+++2024-09-13T06:45:02.6467903Z 801bfaa63ef2: pulling fs layer 
+++2024-09-13T06:45:02.6469042Z ba81004cc3f9: pulling fs layer ++2024-09-13T06 
+:45:02.6470457Z b516164300bc: pulling fs layer ++ 
+2024-09-13T06:45:02.6471992Z d0535b286e7c: pulling fs layer 
+++2024-09-13T06:45:02.6475964Z dc21f12d6926: pulling fs layer 
+++2024-09-13T06:45:02.6483493Z ecaecdd8226c: Pulling fs layer 
+++2024-09-13T06:45:02.6484655Z fea6bee2e0a6: Pulling fs layer 
+++2024-09-13T06:45:02.6485334Z d0535b286e7c: Waiting ++2024-09-13T06:45:02.6485924Z 
+dc21f12d6926: Waiting 
+++2024-09-13T06:45:02.6486483Z ecaecdd8226c: Waiting 
+++2024-09-13T06:45:02.6487104Z fea6bee2e0a6: Bekleniyor 
+++2024-09-13T06:45:02.6487653Z b516164300bc: Denetim Toplamı Doğrulanıyor 
+++2024-09-13T06:45:02.6488412Z b516164300bc: İndirme tamamlandı 
+++2024-09-13T06:45:02.6496002Z ba81004cc3f9: Denetim Toplamı Doğrulanıyor 
+++2024-09-13T06:45:02.6497028Z ba81004cc3f9: İndirme tamamlandı 
+++2024-09-13T06:45:02.7052400Z 801bfaa63ef2: Denetim Toplamı Doğrulanıyor 
+++2024-09-13T06:45:02.7053337Z 801bfaa63ef2: İndirme tamamlandı 
+++2024-09-13T06:45:02.7256210Z dc21f12d6926: Denetim Toplamı Doğrulanıyor 
+++2024-09-13T06:45:02.7257790Z dc21f12d6926: İndirme tamamlandı 
+++2024-09-13T06:45:02.8251039Z fea6bee2e0a6: Denetim Toplamı Doğrulanıyor 
+++2024-09-13T06:45:02.8253512Z fea6bee2e0a6: İndirme tamamlandı 
+++2024-09-13T06:45:02.8833851Z d0535b286e7c: Denetim Toplamı Doğrulanıyor 
+++2024-09-13T06:45:02.8835362Z d0535b286e7c: İndirme tamamlandı 
+++2024-09-13T06:45:02.9062700Z 801bfaa63ef2: Çekme tamamlandı 
+++2024-09-13T06:45:03.1120796Z ba81004cc3f9: Çekme tamamlandı 
+++2024-09-13T06:45:03.1831111Z b516164300bc: Pull completed 
+++2024-09-13T06:45:03.5644656Z ecaecdd8226c: Verifying Checksum
+++2024-09-13T06:45:03.5686549Z ecaecdd8226c: Download completed 
+++2024-09-13T06:45:04.7269071Z d0535b286e7c: Pull completed ++ 
+2024-09-13T06:45:04.7440974Z dc21f12d6926: Pull completed 
+++2024-09-13T06:45:08.7018856Z ecaecdd8226c: Pull completed 
+++2024-09-13T06:45:10.1064889Z fea6bee2e0a6: Pull completed 
+++2024-09-13T06:45:10.1105676Z Özet: sha256:f894be74a06a806442c8dbc51cfb26d48e46c5cfa2d85777ae9fa41cedf9cdb4 
+++2024-09-13T06:45:10.1128184Z Durum: anishathalye/proof-html:1.1.0 için daha yeni resim indirildi 
+++2024-09-13T06:45:10.1157557Z docker.io/anishathalye/proof-html:1.1.0 
+++2024-09-13T06:45:10.1168542Z ##[son grup]f 
+++2024-09-13T06:45:10.1177628Z ##[debug]Finishing: pull anishathalye/proof-html:1.1.0 
+++2024-09-13T06:45:10.1195423Z ##[debug]Evaluating condition for step: 'run anishathalye/proof-html@v1.1.0' 
+++2024-09-13T06:45:10.1200316Z ##[debug]Evaluating: success() 
+++2024-09-13T06:45:10.1201101Z ##[debug]Evaluating success: 
+++2024-09-13T06:45:10.1201855Z ##[debug]=> true 
+++2024-09-13T06:45:10.1202642Z ##[debug]Result: true 
+++2024-09-13T06:45:10.1203667Z ##[debug]Starting: Running anishathalye/proof-html@v1.1.0 
+++2024-09-13T06:45:10.1396281Z ##[debug]Loading entries 
+++2024-09-13T06:45:10.1436566Z ##[debug]Loading environment 
+++2024-09-13T06:45:10.1524707Z ##[group]Run anishathalye/proof-html@v1.1.0 
+++2024-09-13T06:45:10.1525417Z with: 
+++2024-09-13T06:45:10.1525721Z index: ./ 
+++2024-09-13T06:45:10.1526066Z ##[last group]
+++2024-09-13T06:45:10.1773529Z ##[command]/usr/bin/docker run --name anishathalyeproofhtml110_e0e7dd --label 422709 --workdir /github/workspace --rm -e "HOME_DIRECTORY" -e "HOME_EXTERNAL_HASH_CONTROL" -e "HOME_HTML_CONTROL" -e "HOME_IMG_HTTP_CONTROL" -e "HOME_OPEN_GRAPHIC_CONTROL" -e "HOME_FAVICON_CONTROL" -e "HOME_IDENTIFY_SUB_IDENTIFY" -e "HOME_HTTPS_INPUT" -e "HOME_JETS" -e "LOGIN_MAX_CONCURRENT_LOGIN" -e "LOGIN_CONNECTION_TIME" -e "LOGIN_TIMEOUT" -e "LOGIN_URL_IGNORE" -e "LOGIN_URL_IGNORE_RE" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_WORK_ID" -e "GITHUB_WORK_COUNT" -e "GITHUB_HOLDING_DAYS" -e "GITHUB_WORK_TRIAL" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_TRIGGER_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" - "GITHUB_BASE_REF" - "GITHUB_EVENT_NAME" - "GITHUB_SERVER_URL" - "GI THUB_API_URL" - "GITHUB_GRAPHQL_URL" - "GITHUB_REF_NAME" - "GITHUB_REF_PROTECTED" - "GITHUB_REF_TYPE" - "GITHUB_WORKFLOW_REF" - "GITHUB_WORKFLOW_SHA" - "GITHUB_WORKSPACE" - "GITHUB_ACTION" - "GITHUB_EVENT_PATH" - "GITHUB_ACTION_REPOSITORY" - "GITHUB_ACTION_REF" - "GITHUB_PATH" - "GITHUB_ENV" - "GITHUB_STEP_SUMMARY" - "GITHUB_STATE" - "GITHUB_OUTPUT" - "RUNNER_DEBUG" - "RUNNER_OS" - "RUNNER_ARCH" - "RUNNER_NAME" - "RUNNER_ENVIRONMENT " - "RUNNER_TOOL_CACHE" - "RUNNER_TEMP" - "RUNNER_WORKSPACE" - "ACTIONS_RUNTIME_URL" - "ACTIONS_RUNTIME_TOKEN" - "ACTIONS_CACHE_URL" - "ACTIONS_RESULTS_URL" - GITHUB_ACTIONS=true - CI=true - v "/var/run/docker.sock":"/var/run/docker.sock" - v "/home/runner/work/_temp/_github_home":"/github/home" - v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/ runner/work/demo-repository/demo-repository":"/github/workspace" anishathalye/proof-html:1.1.0 
+++2024-09-13T06:45:10.7975836Z ["ScriptCheck", "OpenGraphCheck", "LinkCheck", "ImageCheck", "HtmlCheck", on *.html ["FaviconCheck"] is running... 
+++2024-09-13T06:45:10.7977889Z 
+++2024-09-13T06:45:10.7977898Z 
+++2024-09-13T06:45:10.7978160Z Checking 0 external connections... 
+++2024-09-13T06:45:10.7978934Z Executed on 0 files! 
+++2024-09-13T06:45:10.7979210Z 
+++2024-09-13T06:45:10.7979216Z 
+++2024-09-13T06:45:10.7979689Z HTML-Proofer completed successfully. 
+++2024-09-13T06:45:10.9266519Z ##[debug]Docker Action job completed with exit code 0 
+++2024-09-13T06:45:10.9416285Z ##[debug]Finishing: Running anishathalye/proof-html@v1.1.0 
+++2024-09-13T06:45:10.9583915Z ##[debug]Starting: Job completed 
+++2024-09-13T06:45:10.9586273Z Loading Runner Diagnostic Logs
+++2024-09-13T06:45:10.9635962Z ##[debug]Starting diagnostic file upload. ++2024-09-13T06:45: 
+10.9636716Z ##[debug]Setting up diagnostic log folders. ++2024-09-13T06 
+:45:10.9640217Z ##[debug]Creating diagnostic log files folder. 
+++2024-09-13T06:45:10.9658551Z ##[debug]Copying 1 worker diagnostic log. ++2024-09-13T06:45 
+:10.9675623Z ##[debug]Copying 1 runner diagnostic log. 
+++2024-09-13T06:45:10.9677010Z ##[debug]Compressing diagnostic files. 
+++2024-09-13T06:45:10.9724701Z ##[debug]Loading diagnostic metadata file. 
+++2024-09-13T06:45:10.9750736Z ##[debug]Finished loading diagnostic file. 
+++2024-09-13T06:45:10.9751698Z Completed loading running diagnostic log 
+++2024-09-13T06:45:10.9752163Z Cleaning up orphaned processes 
+++2024-09-13T06:45:11.0175053Z ##[debug]Finishing: Job completed 
+++2024-09-13T06:45:11.0293587Z ##[debug]Finishing: compilation
