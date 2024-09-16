@@ -40,13 +40,6 @@ jobs:
       # want to change this to 'flutter test'.
       - name: Run tests
         run: dart test
-From a5ed1f74c552d64c1b2442e1adfd44e87a119fa3 Mon Sep 17 00:00:00 2001
-From: Sarsilmazxx02 <Recocankaya@gmail.com>
-Date: Fri, 13 Sep 2024 09:51:25 +0300
-Subject: [PATCH] Create README.md
-MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
 
 2024-09-13T06:45:01.5496211Z ##[hata ayıklama]Başlatılıyor: derleme
 2024-09-13T06:45:01.5520075Z ##[debug]Çalıştırıcı geçici klasörü temizleniyor: /home/runner/work/_temp
